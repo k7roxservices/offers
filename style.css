@@ -1,34 +1,48 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Orbitron', sans-serif;
   background: black;
   color: #eaffff;
-  overflow-x: hidden;
-}
-
-/* Background */
-#bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
 }
 
 /* =========================
-   NAVBAR
+   BACKGROUND
+========================= */
+
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
+/* =========================
+   NAVBAR (FIXED – REAL FIX)
 ========================= */
 
 .navbar {
   position: fixed;
   top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+
+  margin: 0 auto;
   width: 92%;
   max-width: 1100px;
+
   padding: 14px 22px;
 
   display: flex;
@@ -38,9 +52,11 @@ body {
   background: rgba(0, 20, 40, 0.65);
   border-radius: 20px;
   backdrop-filter: blur(14px);
+
   border: 1px solid #00f0ff33;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
-  z-index: 100;
+
+  z-index: 9999;
 }
 
 .nav-brand {
@@ -77,7 +93,6 @@ body {
 
 .nav-menu a:hover {
   box-shadow: 0 0 20px #00f0ff88;
-  transform: translateY(-2px);
 }
 
 /* =========================
@@ -89,22 +104,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   justify-content: flex-start;
-
   text-align: center;
-  padding: 2rem;
 
-  padding-top: 180px;
+  padding: 2rem;
+  padding-top: 180px; /* space for navbar */
 }
 
-
 /* =========================
-   WELCOME SECTION
+   WELCOME
 ========================= */
 
 .welcome {
-  margin-top: 160px;
   max-width: 700px;
 }
 
@@ -117,8 +129,8 @@ body {
 
 .welcome p {
   color: #9eefff;
-  opacity: 0.9;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 /* =========================
@@ -162,25 +174,10 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 700px) {
-  .nav-menu {
-    display: none;
-  }
-
-  .welcome h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* =========================
-   OFFERS MAIN PAGE
+   OFFERS
 ========================= */
 
 .offers-wrapper {
-  margin-top: 160px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
@@ -202,46 +199,19 @@ footer {
   transition: 0.35s ease;
 }
 
-.offer-card h2 {
-  font-size: 2rem;
-  color: #00f0ff;
-  text-shadow: 0 0 15px #00f0ff;
-  margin-bottom: 1rem;
-}
-
-.offer-card p {
-  color: #9eefff;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.offer-cta {
-  display: inline-block;
-  margin-top: 1.8rem;
-  color: #00f0ff;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
 .offer-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 45px #00f0ff88;
 }
 
 /* =========================
-   PRICING / DISCORD SERVICES
+   PRICING
 ========================= */
 
 .pricing-section {
-  margin-top: 160px;
   width: 100%;
   max-width: 1100px;
-}
-
-.pricing-section h1 {
-  margin-bottom: 2.5rem;
-  color: #00f0ff;
-  text-shadow: 0 0 20px #00f0ff;
+  margin-bottom: 5rem;
 }
 
 .pricing-grid {
@@ -271,7 +241,6 @@ footer {
   font-size: 0.65rem;
   color: #00f0ff;
   opacity: 0;
-  transition: 0.3s;
 }
 
 .pricing-card:hover::after {
@@ -283,28 +252,9 @@ footer {
   box-shadow: 0 0 45px #00f0ff88;
 }
 
-.pricing-card h2 {
-  color: #00f0ff;
-  margin-bottom: 0.8rem;
-}
-
-.price {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-}
-
-.pricing-card ul {
-  list-style: none;
-  color: #9eefff;
-  line-height: 1.6;
-}
-
-.pricing-card small {
-  font-size: 0.7rem;
-  opacity: 0.7;
-}
-
-/* BADGES */
+/* =========================
+   BADGES
+========================= */
 
 .badge {
   position: absolute;
@@ -317,13 +267,25 @@ footer {
 }
 
 .badge.popular {
-  background: rgba(0, 255, 255, 0.15);
   border: 1px solid #00f0ff;
   color: #00f0ff;
 }
 
 .badge.most {
-  background: rgba(0, 255, 180, 0.15);
   border: 1px solid #00ffb3;
   color: #00ffb3;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .welcome h1 {
+    font-size: 2.2rem;
+  }
 }
