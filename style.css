@@ -222,3 +222,103 @@ footer {
   transform: translateY(-8px);
   box-shadow: 0 0 45px #00f0ff88;
 }
+
+/* =========================
+   PRICING / DISCORD SERVICES
+========================= */
+
+.pricing-section {
+  margin-top: 160px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.pricing-section h1 {
+  margin-bottom: 2.5rem;
+  color: #00f0ff;
+  text-shadow: 0 0 20px #00f0ff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.pricing-card {
+  position: relative;
+  padding: 2.2rem;
+  border-radius: 22px;
+
+  background: rgba(0, 20, 40, 0.75);
+  border: 1px solid #00f0ff55;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+
+  transition: 0.35s ease;
+}
+
+.pricing-card::after {
+  content: attr(data-id);
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  font-size: 0.65rem;
+  color: #00f0ff;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.pricing-card:hover::after {
+  opacity: 0.8;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 45px #00f0ff88;
+}
+
+.pricing-card h2 {
+  color: #00f0ff;
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  color: #9eefff;
+  line-height: 1.6;
+}
+
+.pricing-card small {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* BADGES */
+
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badge.popular {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+}
+
+.badge.most {
+  background: rgba(0, 255, 180, 0.15);
+  border: 1px solid #00ffb3;
+  color: #00ffb3;
+}
