@@ -169,3 +169,56 @@ footer {
     font-size: 2.2rem;
   }
 }
+
+/* =========================
+   OFFERS MAIN PAGE
+========================= */
+
+.offers-wrapper {
+  margin-top: 160px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.offer-card {
+  text-decoration: none;
+  color: #eaffff;
+  padding: 2.5rem;
+  border-radius: 22px;
+
+  background: rgba(0, 20, 40, 0.75);
+  border: 1px solid #00f0ff55;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.18);
+
+  transition: 0.35s ease;
+}
+
+.offer-card h2 {
+  font-size: 2rem;
+  color: #00f0ff;
+  text-shadow: 0 0 15px #00f0ff;
+  margin-bottom: 1rem;
+}
+
+.offer-card p {
+  color: #9eefff;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.offer-cta {
+  display: inline-block;
+  margin-top: 1.8rem;
+  color: #00f0ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 45px #00f0ff88;
+}
